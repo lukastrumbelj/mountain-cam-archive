@@ -7,3 +7,4 @@ out/
 node_modules/
 .pytest_cache/
 .DS_Store
+.idea/
