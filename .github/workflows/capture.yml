@@ -1,0 +1,59 @@
+name: capture
+
+on:
+  schedule:
+    # Termini 07, 10, 13, 16, 19 (Europe/Ljubljana). GitHub cron je samo v UTC, zato sta tu
+    # zimski (UTC+1) in poletni (UTC+2) niz; --require-slot preskoči tistega, ki ne ustreza.
+    # Minuta 7 namesto 0: GitHub ob polnih urah pogosto zamuja.
+    - cron: "7 6,9,12,15,18 * * *"   # zima
+    - cron: "7 5,8,11,14,17 * * *"   # poletje
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "ID kamer (ločeni s presledkom), prazno = vse"
+        required: false
+        default: ""
+
+# En zajem naenkrat: preprečuje hkratno pisanje v index.json.
+concurrency:
+  group: capture
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Playwright (samo če kamera uporablja selector/screenshot/custom)
+        run: |
+          if grep -Eq "^\s*mode:\s*(selector|screenshot|custom)" config/cameras.yaml; then
+            playwright install --with-deps chromium
+          fi
+
+      - name: Zajem
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          ONLY: ${{ github.event.inputs.only }}
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python -m backend.main --require-slot --tolerance 45
+          elif [ -n "$ONLY" ]; then
+            python -m backend.main --manual --only $ONLY
+          else
+            python -m backend.main --manual
+          fi
