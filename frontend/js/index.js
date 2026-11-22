@@ -21,10 +21,23 @@ function card(id, c) {
         ? el("div", { className: "muted", textContent: c.error, title: c.error }) : ""));
 }
 
+// Gorovje = zadnji del polja location ("Ime, Julijske Alpe").
+const rangeOf = (c) => ((c.location || "").split(",").pop().trim()) || "Drugo";
+
 function render() {
   const q = document.getElementById("search").value.trim().toLowerCase();
   const shown = cams.filter(([, c]) => `${c.name} ${c.location}`.toLowerCase().includes(q));
-  grid.replaceChildren(...shown.map(([id, c]) => card(id, c)));
+  const groups = new Map();
+  for (const e of shown) {
+    const r = rangeOf(e[1]);
+    if (!groups.has(r)) groups.set(r, []);
+    groups.get(r).push(e);
+  }
+  const names = [...groups.keys()].sort((a, b) => a.localeCompare(b, "sl"));
+  grid.replaceChildren(...names.flatMap((r) => [
+    el("h2", { className: "range", id: "g-" + r, textContent: `${r} (${groups.get(r).length})` }),
+    el("div", { className: "grid" }, ...groups.get(r).map(([id, c]) => card(id, c))),
+  ]));
   const bad = cams.filter(([, c]) => health(c).key !== "ok").length;
   summary.textContent = `${cams.length} kamer, ${cams.length - bad} deluje` + (bad ? `, ${bad} s težavami` : "");
 }

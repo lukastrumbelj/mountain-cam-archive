@@ -31,6 +31,8 @@ def _raw_capture(cam: Camera, settings: dict) -> bytes:
         return css_capture.capture(cam, settings)
     if cam.mode in ("screenshot", "custom"):
         return browser_capture.capture(cam, settings)
+    if cam.mode == "video":
+        return browser_capture.capture_video(cam, settings)
     raise CaptureError(f"neznan mode {cam.mode}", "capture")
 
 

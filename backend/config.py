@@ -6,7 +6,7 @@ from pathlib import Path
 
 import yaml
 
-MODES = {"direct", "selector", "screenshot", "custom"}
+MODES = {"direct", "selector", "screenshot", "custom", "video"}
 
 DEFAULTS = {
     "user_agent": "MountainCamArchive/0.1 (personal non-commercial archive)",

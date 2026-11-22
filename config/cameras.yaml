@@ -17,7 +17,7 @@ settings:
   min_width: 200
   min_height: 120
   timezone: Europe/Ljubljana
-  slots: ["07:00", "10:00", "13:00", "16:00", "19:00"]
+  slots: ["07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","21:00","23:00","01:00","03:00","05:00"]
 
 cameras:
   - id: kamnisko-sedlo
@@ -96,3 +96,1544 @@ cameras:
     active: false
 
   # Vogel (WhatsUpCams): IZKLJUČENO. Pogoji uporabe prepovedujejo samodejni dostop/scraping.
+
+  # --- uvoz s hribi.net ---
+  - id: bled-313
+    name: Bled
+    location: Bled, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/bled/313
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Bled/Bld1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: bohinjska-bistrica-295
+    name: Bohinjska Bistrica
+    location: Bohinjska Bistrica, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/bohinjska_bistrica/295
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Bohinjska/Boh1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: bovec-1317-1
+    name: Bovec (1)
+    location: Bovec, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/bovec/1317
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/BOVEC_dir/siwc_BOVEC_ne_latest.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: bovec-1317-2
+    name: Bovec (2)
+    location: Bovec, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/bovec/1317
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/BOVEC_dir/siwc_BOVEC_sw.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: bovec-1317-3
+    name: Bovec (3)
+    location: Bovec, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/bovec/1317
+    mode: direct
+    image_url: https://www.hribi.net/kamere/bovec_1465.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: breginj-5722
+    name: Breginj
+    location: Breginj, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/breginj/5722
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/drsi_vgrc/Breginj_Brg1_0001.jpg?dt=1760078050227
+    wait_seconds: 0
+    active: true
+
+  - id: crna-prst-3503
+    name: Črna prst
+    location: Črna prst, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/crna_prst/3503
+    mode: direct
+    image_url: https://www.hribi.net/kamere/crna_prst.jpg?i=548552
+    wait_seconds: 0
+    active: false
+
+  - id: javorscek-1593
+    name: Javoršček
+    location: Javoršček, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/javorscek/1593
+    mode: direct
+    image_url: https://www.hribi.net/kamere/javorscek_1593.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: kanin-3-1
+    name: Kanin (1)
+    location: Kanin, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kanin/3
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/BOVEC_dir/siwc_BOVEC_nw.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: kanin-3-2
+    name: Kanin (2)
+    location: Kanin, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kanin/3
+    mode: direct
+    image_url: http://www.parcoprealpigiulie.it/public/meteo/it-fr-004-2/current.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: kanin-3-3
+    name: Kanin (3)
+    location: Kanin, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kanin/3
+    mode: direct
+    image_url: https://www.hribi.net/kamere/kanin.jpg?i=285766
+    wait_seconds: 0
+    active: true
+
+  - id: kanin-3-4
+    name: Kanin (4)
+    location: Kanin, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kanin/3
+    mode: direct
+    image_url: https://www.hribi.net/kamere/kanin_3057.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: kanin-3-5
+    name: Kanin (5)
+    location: Kanin, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kanin/3
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/KANIN_dir/siwc_KANIN_e.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kanin-3-6
+    name: Kanin (6)
+    location: Kanin, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kanin/3
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/KANIN_dir/siwc_KANIN_sw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kanin-3-7
+    name: Kanin (7)
+    location: Kanin, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kanin/3
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/KANIN_dir/siwc_KANIN_nw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kobarid-500-1
+    name: Kobarid (1)
+    location: Kobarid, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kobarid/500
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/drsi_vgrc/Kobarid_Kob1_0001.jpg?dt=1775917904283
+    wait_seconds: 0
+    active: true
+
+  - id: kobarid-500-2
+    name: Kobarid (2)
+    location: Kobarid, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kobarid/500
+    mode: direct
+    image_url: https://www.hribi.net/kamere/kobarid_2022.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: koca-na-planini-kuhinja-3576
+    name: Koča na planini Kuhinja
+    location: Koča na planini Kuhinja, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/koca_na_planini_kuhinja/3576
+    mode: direct
+    image_url: https://www.hribi.net/kamere/koca_na_planini_kuhinja_3576.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: kravja-crna-gora-3272
+    name: Kravja Črna gora
+    location: Kravja Črna gora, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kravja_crna_gora/3272
+    mode: direct
+    image_url: https://www.hribi.net/kamere/kravja_crna_gora_3272.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kredarica-20-1
+    name: Kredarica (1)
+    location: Kredarica, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kredarica/20
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/KREDA-ICA_dir/siwc_KREDA-ICA_e.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kredarica-20-2
+    name: Kredarica (2)
+    location: Kredarica, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kredarica/20
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/KREDA-ICA_dir/siwc_KREDA-ICA_se.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kredarica-20-3
+    name: Kredarica (3)
+    location: Kredarica, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kredarica/20
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/KREDA-ICA_dir/siwc_KREDA-ICA_w.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kredarica-20-4
+    name: Kredarica (4)
+    location: Kredarica, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/kredarica/20
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/KREDA-ICA_dir/siwc_KREDA-ICA_sw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: letalisce-bovec-3509
+    name: Letališče Bovec
+    location: Letališče Bovec, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/letalisce_bovec/3509
+    mode: direct
+    image_url: https://www.hribi.net/kamere/bovec.jpg?i=285766
+    wait_seconds: 0
+    active: true
+
+  - id: mangartska-planina-4132
+    name: Mangartska planina
+    location: Mangartska planina, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/mangartska_planina/4132
+    mode: direct
+    image_url: https://www.hribi.net/kamere/mangartska_planina_4132.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: mihov-dom-na-vrsicu-4183-video
+    name: Mihov dom na Vršiču (video)
+    location: Mihov dom na Vršiču, Julijske Alpe
+    url: https://mihovdom.si/live/
+    mode: video
+    selector: video
+    wait_seconds: 5
+    active: false
+
+  - id: mojstrana-cesta-v-vrata-5119
+    name: Mojstrana (cesta v Vrata)
+    location: Mojstrana (cesta v Vrata), Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/mojstrana_cesta_v_vrata/5119
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Mojstrana/Moj1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: obrne-he-soteska-5083
+    name: Obrne (HE Soteska)
+    location: Obrne (HE Soteska), Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/obrne_he_soteska/5083
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Soteska/Sot1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: planica-1779
+    name: Planica
+    location: Planica, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/planica/1779
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Ratece2/Rat2_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: polovnik-1466
+    name: Polovnik
+    location: Polovnik, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/polovnik/1466
+    mode: direct
+    image_url: https://www.hribi.net/kamere/polovnik_1466.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: postarski-dom-na-vrsicu-2974-1
+    name: Poštarski dom na Vršiču (1)
+    location: Poštarski dom na Vršiču, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/postarski_dom_na_vrsicu/2974
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/VRSIC_dir/siwc_VRSIC_ne.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: postarski-dom-na-vrsicu-2974-2
+    name: Poštarski dom na Vršiču (2)
+    location: Poštarski dom na Vršiču, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/postarski_dom_na_vrsicu/2974
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/VRSIC_dir/siwc_VRSIC_sw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: predel-25-1
+    name: Predel (1)
+    location: Predel, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/predel/25
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/PREDEL_dir/siwc_PREDEL_e.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: predel-25-2
+    name: Predel (2)
+    location: Predel, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/predel/25
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Predel/Pre1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: predel-25-3
+    name: Predel (3)
+    location: Predel, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/predel/25
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/PREDEL_dir/siwc_PREDEL_w.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: robic-1781
+    name: Robič
+    location: Robič, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/robic/1781
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Robic/Rob1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: rogelj-1463
+    name: Rogelj
+    location: Rogelj, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/rogelj/1463
+    mode: direct
+    image_url: https://www.hribi.net/kamere/rogelj_1463.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: stol-kobariski-1881-1
+    name: Stol (Kobariški) (1)
+    location: Stol (Kobariški), Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/stol_kobariski/1881
+    mode: direct
+    image_url: https://www.hribi.net/kamere/stol_kobariski.jpg?i=548552
+    wait_seconds: 0
+    active: true
+
+  - id: stol-kobariski-1881-2
+    name: Stol (Kobariški) (2)
+    location: Stol (Kobariški), Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/stol_kobariski/1881
+    mode: direct
+    image_url: https://www.hribi.net/kamere/stol_kobariski_sever.jpg?i=548552
+    wait_seconds: 0
+    active: false
+
+  - id: svinjak-312
+    name: Svinjak
+    location: Svinjak, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/svinjak/312
+    mode: direct
+    image_url: https://www.hribi.net/kamere/svinjak_2246.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: triglavski-ledenik-2174-1
+    name: Triglavski ledenik (1)
+    location: Triglavski ledenik, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/triglavski_ledenik/2174
+    mode: direct
+    image_url: https://www.hribi.net/kamere/triglavski_ledenik_2174.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: triglavski-ledenik-2174-2
+    name: Triglavski ledenik (2)
+    location: Triglavski ledenik, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/triglavski_ledenik/2174
+    mode: direct
+    image_url: https://www.hribi.net/kamere/triglavski_ledenik_2175.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: ucja-1679
+    name: Učja
+    location: Učja, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/ucja/1679
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Ucja/Ucj1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: veliki-babanski-skedenj-1464
+    name: Veliki Babanski skedenj
+    location: Veliki Babanski skedenj, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/veliki_babanski_skedenj/1464
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/BOVEC_dir/siwc_BOVEC_w.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: vogel-16-1
+    name: Vogel (1)
+    location: Vogel, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/vogel/16
+    mode: direct
+    image_url: https://www.hribi.net/kamere/vogel_2236.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: zgornja-sorica-2013-1
+    name: Zgornja Sorica (1)
+    location: Zgornja Sorica, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/zgornja_sorica/2013
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/ZGORN-SOR_dir/siwc_ZGORN-SOR_sw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: zgornja-sorica-2013-2
+    name: Zgornja Sorica (2)
+    location: Zgornja Sorica, Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/zgornja_sorica/2013
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/ZGORN-SOR_dir/siwc_ZGORN-SOR_se.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: brezje-401-1
+    name: Brezje (1)
+    location: Brezje, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/brezje/401
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/Brezje_smer_Jesenice.jpg?&dt=1584008609229
+    wait_seconds: 0
+    active: true
+
+  - id: brezje-401-2
+    name: Brezje (2)
+    location: Brezje, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/brezje/401
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/Brezje_Vrtljiva.jpg?&dt=1584008670745
+    wait_seconds: 0
+    active: true
+
+  - id: brezje-401-3
+    name: Brezje (3)
+    location: Brezje, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/brezje/401
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/Brezje_smer_Ljubljana.jpg?&dt=1584008701749
+    wait_seconds: 0
+    active: true
+
+  - id: brnik-301-1
+    name: Brnik (1)
+    location: Brnik, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/brnik/301
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/LJUBL-ANA_BRNIK_dir/siwc_LJUBL-ANA_BRNIK_nw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: brnik-301-2
+    name: Brnik (2)
+    location: Brnik, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/brnik/301
+    mode: direct
+    image_url: http://www.meteo.si/uploads/probase/www/observ/webcam/LJUBL-ANA_BRNIK_dir/siwc_LJUBL-ANA_BRNIK_w.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: brnik-301-3
+    name: Brnik (3)
+    location: Brnik, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/brnik/301
+    mode: direct
+    image_url: http://www.meteo.si/uploads/probase/www/observ/webcam/LJUBL-ANA_BRNIK_dir/siwc_LJUBL-ANA_BRNIK_n.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: brnik-301-4
+    name: Brnik (4)
+    location: Brnik, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/brnik/301
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/LJUBL-ANA_BRNIK_dir/siwc_LJUBL-ANA_BRNIK_e.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: brnik-301-5
+    name: Brnik (5)
+    location: Brnik, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/brnik/301
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/LJUBL-ANA_BRNIK_dir/siwc_LJUBL-ANA_BRNIK_ne.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: brnik-301-6
+    name: Brnik (6)
+    location: Brnik, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/brnik/301
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/LJUBL-ANA_BRNIK_dir/siwc_LJUBL-ANA_BRNIK_se.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: brnik-301-7
+    name: Brnik (7)
+    location: Brnik, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/brnik/301
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/LJUBL-ANA_BRNIK_dir/siwc_LJUBL-ANA_BRNIK_s.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: brnik-301-8
+    name: Brnik (8)
+    location: Brnik, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/brnik/301
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/LJUBL-ANA_BRNIK_dir/siwc_LJUBL-ANA_BRNIK_sw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: celje-letno-kopalisce-361
+    name: Celje (letno kopališče)
+    location: Celje (letno kopališče), Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/celje_letno_kopalisce/361
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Baza_Konjice/Celje_SD.jpg?&dt=1584009787762
+    wait_seconds: 0
+    active: true
+
+  - id: dom-na-smrekovcu-5279
+    name: Dom na Smrekovcu
+    location: Dom na Smrekovcu, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/dom_na_smrekovcu/5279
+    mode: direct
+    image_url: https://domnasmrekovcu.si/kamera/latest.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: domzalski-dom-na-mali-planini-3354
+    name: Domžalski dom na Mali planini
+    location: Domžalski dom na Mali planini, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/domzalski_dom_na_mali_planini/3354
+    mode: direct
+    image_url: https://podatki.pdd.si/webkamera/webcam-vp1.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: grintovec-1570
+    name: Grintovec
+    location: Grintovec, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/grintovec/1570
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/LJUBL-ANA_BRNIK_dir/siwc_LJUBL-ANA_BRNIK_n.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kamnisko-sedlo-2326
+    name: Kamniško sedlo
+    location: Kamniško sedlo, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/kamnisko_sedlo/2326
+    mode: direct
+    image_url: https://www.hribi.net/kamere/kamnisko_sedlo_2326.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kokrsko-sedlo-3693
+    name: Kokrsko sedlo
+    location: Kokrsko sedlo, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/kokrsko_sedlo/3693
+    mode: direct
+    image_url: https://www.hribi.net/kamere/kokrsko_sedlo_3693.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kriska-gora-2115-2
+    name: Kriška gora (2)
+    location: Kriška gora, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/kriska_gora/2115
+    mode: direct
+    image_url: https://www.luftar.si/img/webCam/KriskaSebenje.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kriska-gora-2115-3
+    name: Kriška gora (3)
+    location: Kriška gora, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/kriska_gora/2115
+    mode: direct
+    image_url: https://www.hribi.net/kamere/kriska_gora_3134.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: krvavec-33-1
+    name: Krvavec (1)
+    location: Krvavec, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/krvavec/33
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/KRVAVEC_dir/siwc_KRVAVEC_s.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: krvavec-33-2
+    name: Krvavec (2)
+    location: Krvavec, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/krvavec/33
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/KRVAVEC_dir/siwc_KRVAVEC_w.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: krvavec-krzisce-5778
+    name: Krvavec (Kržišče)
+    location: Krvavec (Kržišče), Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/krvavec_krzisce/5778
+    mode: direct
+    image_url: http://zvezdatv.si/ZvezdaTVKamere/krvavec_krzisce/image.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: lesce-399-1
+    name: Lesce (1)
+    location: Lesce, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/lesce/399
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/Vrba_smer_Jesenice.jpg?&dt=1584013811953
+    wait_seconds: 0
+    active: true
+
+  - id: lesce-399-2
+    name: Lesce (2)
+    location: Lesce, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/lesce/399
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/Vrba_smer_Ljubljana.jpg?&dt=1584013811954
+    wait_seconds: 0
+    active: true
+
+  - id: lesce-399-3
+    name: Lesce (3)
+    location: Lesce, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/lesce/399
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Lesce/Les1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: logarska-dolina-2410-1
+    name: Logarska dolina (1)
+    location: Logarska dolina, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/logarska_dolina/2410
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/LOGAR-DOL_dir/siwc_LOGAR-DOL_n.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: logarska-dolina-2410-2
+    name: Logarska dolina (2)
+    location: Logarska dolina, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/logarska_dolina/2410
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/LOGAR-DOL_dir/siwc_LOGAR-DOL_sw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: logarska-dolina-2410-3
+    name: Logarska dolina (3)
+    location: Logarska dolina, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/logarska_dolina/2410
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/LOGAR-DOL_dir/siwc_LOGAR-DOL_sw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: medlog-1164-1
+    name: Medlog (1)
+    location: Medlog, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/medlog/1164
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/CELJE_MEDLOG_dir/siwc_CELJE_MEDLOG_n.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: medlog-1164-2
+    name: Medlog (2)
+    location: Medlog, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/medlog/1164
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/CELJE_MEDLOG_dir/siwc_CELJE_MEDLOG_w.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: moste-pri-komendi-488
+    name: Moste pri Komendi
+    location: Moste pri Komendi, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/moste_pri_komendi/488
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Moste/Mos1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: motnik-2252
+    name: Motnik
+    location: Motnik, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/motnik/2252
+    mode: direct
+    image_url: https://www.hribi.net/kamere/motnik_3661.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: nadvoz-strahinj-4912
+    name: Nadvoz Strahinj
+    location: Nadvoz Strahinj, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/nadvoz_strahinj/4912
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/Nadvoz_Strahinj_2.jpg?dt=1678091578762
+    wait_seconds: 0
+    active: false
+
+  - id: petrovce-308-1
+    name: Petrovče (1)
+    location: Petrovče, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/petrovce/308
+    mode: direct
+    image_url: http://www2.arnes.si/~mrozma/vreme/petrovce/webcam.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: petrovce-308-2
+    name: Petrovče (2)
+    location: Petrovče, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/petrovce/308
+    mode: direct
+    image_url: http://www2.arnes.si/~mrozma/vreme/petrovce/webcam2.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: podtabor-406-1
+    name: Podtabor (1)
+    location: Podtabor, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/podtabor/406
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Torovo/Podtabor_konec_JE.jpg?&dt=1584016724879
+    wait_seconds: 0
+    active: true
+
+  - id: podtabor-406-2
+    name: Podtabor (2)
+    location: Podtabor, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/podtabor/406
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Torovo/Podtabor_LJ.jpg?&dt=1584016724877
+    wait_seconds: 0
+    active: true
+
+  - id: podtabor-406-3
+    name: Podtabor (3)
+    location: Podtabor, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/podtabor/406
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Torovo/Podtabor_konec_LJ.jpg?&dt=1584016724881
+    wait_seconds: 0
+    active: true
+
+  - id: podtabor-406-4
+    name: Podtabor (4)
+    location: Podtabor, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/podtabor/406
+    mode: direct
+    image_url: http://kamere.dars.si/kamere/Torovo/Podtabor_JE.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: podvin-418
+    name: Podvin
+    location: Podvin, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/podvin/418
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Podvin/Pod1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: polica-pri-naklem-3427-1
+    name: Polica (pri Naklem) (1)
+    location: Polica (pri Naklem), Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/polica_pri_naklem/3427
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/drsi_vgrc/Polica1_Pol1_0001.jpg?dt=1775918444267
+    wait_seconds: 0
+    active: true
+
+  - id: polica-pri-naklem-3427-2
+    name: Polica (pri Naklem) (2)
+    location: Polica (pri Naklem), Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/polica_pri_naklem/3427
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Polica2/Pol2_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: prelaz-crnivec-3633
+    name: Prelaz Črnivec
+    location: Prelaz Črnivec, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/prelaz_crnivec/3633
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Crnivec/Crn1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: radegunda-2167-1
+    name: Radegunda (1)
+    location: Radegunda, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/radegunda/2167
+    mode: direct
+    image_url: https://meteo.arso.gov.si/uploads/probase/www/observ/webcam/RADEG-NDA_dir/siwc_RADEG-NDA_w.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: radegunda-2167-2
+    name: Radegunda (2)
+    location: Radegunda, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/radegunda/2167
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/RADEG-NDA_dir/siwc_RADEG-NDA_sw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: radegunda-2167-3
+    name: Radegunda (3)
+    location: Radegunda, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/radegunda/2167
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/RADEG-NDA_dir/siwc_RADEG-NDA_se.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: solcava-5080
+    name: Solčava
+    location: Solčava, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/solcava/5080
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Solcava/Sol1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: spodnji-brnik-5084
+    name: Spodnji Brnik
+    location: Spodnji Brnik, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/spodnji_brnik/5084
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Brnik/Brn1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: sentrupert-379
+    name: Šentrupert
+    location: Šentrupert, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/sentrupert/379
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Sentrupert/Str1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: spitalic-5086
+    name: Špitalič
+    location: Špitalič, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/spitalic/5086
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Spitalic/Spt1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: torovo-403-1
+    name: Torovo (1)
+    location: Torovo, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/torovo/403
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Torovo/SD_Torovo_KR.jpg?&dt=1584018215818
+    wait_seconds: 0
+    active: true
+
+  - id: torovo-403-2
+    name: Torovo (2)
+    location: Torovo, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/torovo/403
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Torovo/SD_Torovo_LJ.jpg?&dt=1584018277739
+    wait_seconds: 0
+    active: true
+
+  - id: trzic-2417-1
+    name: Tržič (1)
+    location: Tržič, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/trzic/2417
+    mode: direct
+    image_url: https://meteotrzic.net/webcam/webcam-south-west/image.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: trzic-2417-2
+    name: Tržič (2)
+    location: Tržič, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/trzic/2417
+    mode: direct
+    image_url: https://meteotrzic.net/webcam/webcam-north-west/image.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: velenje-5718-1
+    name: Velenje (1)
+    location: Velenje, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/velenje/5718
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/drsi_cuvpkamere/Velenje_Partizanska_Gorenje_(tovorni)_VN.jpeg?dt=1760001928930
+    wait_seconds: 0
+    active: true
+
+  - id: velenje-5718-2
+    name: Velenje (2)
+    location: Velenje, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/velenje/5718
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/drsi_cuvpkamere/Velenje_Partizanska_Gorenje_2.jpeg?dt=1760001998829
+    wait_seconds: 0
+    active: true
+
+  - id: velenje-5718-3
+    name: Velenje (3)
+    location: Velenje, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/velenje/5718
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/drsi_cuvpkamere/Velenje_Partizanska_Gorenje_1.jpeg?dt=1760002088921
+    wait_seconds: 0
+    active: true
+
+  - id: vodice-2187
+    name: Vodice
+    location: Vodice, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/vodice_/2187
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Vodice/Vod1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: voklo-2230-1
+    name: Voklo (1)
+    location: Voklo, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/voklo/2230
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Torovo/Voklo_LJ.jpg?dt=1678091423182
+    wait_seconds: 0
+    active: true
+
+  - id: voklo-2230-2
+    name: Voklo (2)
+    location: Voklo, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/voklo/2230
+    mode: direct
+    image_url: http://kamere.dars.si/kamere/Torovo/Voklo_Kranj.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: vransko-359-1
+    name: Vransko (1)
+    location: Vransko, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/vransko/359
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Vransko/cam1.jpg?&dt=1584019454463
+    wait_seconds: 0
+    active: true
+
+  - id: vransko-359-2
+    name: Vransko (2)
+    location: Vransko, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/vransko/359
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Vransko/cam0.jpg?&dt=1584019454465
+    wait_seconds: 0
+    active: true
+
+  - id: zgornje-duplje-2320
+    name: Zgornje Duplje
+    location: Zgornje Duplje, Kamniško Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/zgornje_duplje/2320
+    mode: direct
+    image_url: https://www.hribi.net/kamere/zgornje_duplje_2320.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: crna-na-koroskem-1461
+    name: Črna na Koroškem
+    location: Črna na Koroškem, Karavanke
+    url: https://www.hribi.net/spletna_kamera/crna_na_koroskem/1461
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Crna/Crk1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: dom-na-peci-2147
+    name: Dom na Peci
+    location: Dom na Peci, Karavanke
+    url: https://www.hribi.net/spletna_kamera/dom_na_peci/2147
+    mode: direct
+    image_url: https://pdmezica.si/webcam_peca/koca_na_peci_1.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: dovje-1075
+    name: Dovje
+    location: Dovje, Karavanke
+    url: https://www.hribi.net/spletna_kamera/dovje/1075
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Dovje/Dov1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: dramlje-1743
+    name: Dramlje
+    location: Dramlje, Karavanke
+    url: https://www.hribi.net/spletna_kamera/dramlje/1743
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Baza_Konjice/Dramlje_SD.jpg?&dt=1584012037076
+    wait_seconds: 0
+    active: false
+
+  - id: gruskovje-predor-log-390-1
+    name: Gruškovje (predor Log) (1)
+    location: Gruškovje (predor Log), Karavanke
+    url: https://www.hribi.net/spletna_kamera/gruskovje_predor_log/390
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Maribor/LOG1.5.jpg?dt=1675418775741
+    wait_seconds: 0
+    active: true
+
+  - id: gruskovje-predor-log-390-2
+    name: Gruškovje (predor Log) (2)
+    location: Gruškovje (predor Log), Karavanke
+    url: https://www.hribi.net/spletna_kamera/gruskovje_predor_log/390
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Maribor/LOG1.1.jpg?dt=1766243639620
+    wait_seconds: 0
+    active: true
+
+  - id: hrusica-283-1
+    name: Hrušica (1)
+    location: Hrušica, Karavanke
+    url: https://www.hribi.net/spletna_kamera/hrusica/283
+    mode: direct
+    image_url: http://kamere.dars.si/kamere/Hrusica/CP_Hrusica_Vrtljiva_kamera.jpg?dt=Wed%20Apr%2004%202012%2011:20:12%20GMT+0200
+    wait_seconds: 0
+    active: false
+
+  - id: hrusica-283-2
+    name: Hrušica (2)
+    location: Hrušica, Karavanke
+    url: https://www.hribi.net/spletna_kamera/hrusica/283
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/hrusica/CP_Hrusica_IPCAM.jpg?dt=1678093342204
+    wait_seconds: 0
+    active: true
+
+  - id: hrusica-283-3
+    name: Hrušica (3)
+    location: Hrušica, Karavanke
+    url: https://www.hribi.net/spletna_kamera/hrusica/283
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/VN_0601_02.jpg?dt=1678093646354
+    wait_seconds: 0
+    active: false
+
+  - id: hrusica-283-4
+    name: Hrušica (4)
+    location: Hrušica, Karavanke
+    url: https://www.hribi.net/spletna_kamera/hrusica/283
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/hrusica/CP_Hrusica_IPCAM2.jpg?dt=1678093612756
+    wait_seconds: 0
+    active: true
+
+  - id: hrusica-283-5
+    name: Hrušica (5)
+    location: Hrušica, Karavanke
+    url: https://www.hribi.net/spletna_kamera/hrusica/283
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/hrusica/IP3%20Panorama%20Hrusica.jpg?dt=1661005211122
+    wait_seconds: 0
+    active: true
+
+  - id: hrusica-283-6
+    name: Hrušica (6)
+    location: Hrušica, Karavanke
+    url: https://www.hribi.net/spletna_kamera/hrusica/283
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/VN_0602_04.jpg?dt=1678092113752
+    wait_seconds: 0
+    active: true
+
+  - id: hrusica-283-7
+    name: Hrušica (7)
+    location: Hrušica, Karavanke
+    url: https://www.hribi.net/spletna_kamera/hrusica/283
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/VN_0602_05.jpg?dt=1678092143686
+    wait_seconds: 0
+    active: true
+
+  - id: jesenice-395-1
+    name: Jesenice (1)
+    location: Jesenice, Karavanke
+    url: https://www.hribi.net/spletna_kamera/jesenice/395
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/Lipce_smer_Ljubljana.jpg?&dt=1584012839386
+    wait_seconds: 0
+    active: true
+
+  - id: jesenice-395-2
+    name: Jesenice (2)
+    location: Jesenice, Karavanke
+    url: https://www.hribi.net/spletna_kamera/jesenice/395
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/Lipce_smer_Jesenice.jpg?&dt=1584012869742
+    wait_seconds: 0
+    active: true
+
+  - id: jesenice-395-3
+    name: Jesenice (3)
+    location: Jesenice, Karavanke
+    url: https://www.hribi.net/spletna_kamera/jesenice/395
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Jesenice/Jes1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: jesenice-395-4
+    name: Jesenice (4)
+    location: Jesenice, Karavanke
+    url: https://www.hribi.net/spletna_kamera/jesenice/395
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Jesenice2/Jes2_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: jezerski-vrh-2188-1
+    name: Jezerski vrh (1)
+    location: Jezerski vrh, Karavanke
+    url: https://www.hribi.net/spletna_kamera/jezerski_vrh/2188
+    mode: direct
+    image_url: https://www.drsc.si/kamere/JezerskoMP/JMP1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: jezerski-vrh-2188-2
+    name: Jezerski vrh (2)
+    location: Jezerski vrh, Karavanke
+    url: https://www.hribi.net/spletna_kamera/jezerski_vrh/2188
+    mode: direct
+    image_url: https://ktncloud.winterdienst360.com/seeberg.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kepa-219-1
+    name: Kepa (1)
+    location: Kepa, Karavanke
+    url: https://www.hribi.net/spletna_kamera/kepa/219
+    mode: direct
+    image_url: https://faakersee.it-wms.com/big_current4.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: kepa-219-2
+    name: Kepa (2)
+    location: Kepa, Karavanke
+    url: https://www.hribi.net/spletna_kamera/kepa/219
+    mode: direct
+    image_url: https://www.foto-webcam.eu/webcam/duel/current/1200.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: korensko-sedlo-26-1
+    name: Korensko sedlo (1)
+    location: Korensko sedlo, Karavanke
+    url: https://www.hribi.net/spletna_kamera/korensko_sedlo/26
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Korensko/Kor1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: korensko-sedlo-26-2
+    name: Korensko sedlo (2)
+    location: Korensko sedlo, Karavanke
+    url: https://www.hribi.net/spletna_kamera/korensko_sedlo/26
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/KOREN-SED_dir/siwc_KOREN-SED_s.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: korensko-sedlo-26-3
+    name: Korensko sedlo (3)
+    location: Korensko sedlo, Karavanke
+    url: https://www.hribi.net/spletna_kamera/korensko_sedlo/26
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/KOREN-SED_dir/siwc_KOREN-SED_nw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: korensko-sedlo-26-4
+    name: Korensko sedlo (4)
+    location: Korensko sedlo, Karavanke
+    url: https://www.hribi.net/spletna_kamera/korensko_sedlo/26
+    mode: direct
+    image_url: https://ktncloud.winterdienst360.com/wurzenpass.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: ljubelj-10-1
+    name: Ljubelj (1)
+    location: Ljubelj, Karavanke
+    url: https://www.hribi.net/spletna_kamera/ljubelj/10
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/drsi_vgrc/LjubeljT_Ljt1_0001.jpg?dt=1772347206972
+    wait_seconds: 0
+    active: true
+
+  - id: ljubelj-10-2
+    name: Ljubelj (2)
+    location: Ljubelj, Karavanke
+    url: https://www.hribi.net/spletna_kamera/ljubelj/10
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/drsi_vgrc/Ljubelj_Lju1_0001.jpg?dt=1743585415546
+    wait_seconds: 0
+    active: true
+
+  - id: ljubelj-10-3
+    name: Ljubelj (3)
+    location: Ljubelj, Karavanke
+    url: https://www.hribi.net/spletna_kamera/ljubelj/10
+    mode: direct
+    image_url: https://ktncloud.winterdienst360.com/loibltunnel.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: moste-397-1
+    name: Moste (1)
+    location: Moste, Karavanke
+    url: https://www.hribi.net/spletna_kamera/moste/397
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/Breg_smer_Jesenice.jpg?&dt=1584016325709
+    wait_seconds: 0
+    active: true
+
+  - id: moste-397-2
+    name: Moste (2)
+    location: Moste, Karavanke
+    url: https://www.hribi.net/spletna_kamera/moste/397
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Hrusica/Breg_smer_Ljubljana.jpg?&dt=1584016325710
+    wait_seconds: 0
+    active: true
+
+  - id: pecica-4947
+    name: Pečica
+    location: Pečica, Karavanke
+    url: https://www.hribi.net/spletna_kamera/pecica/4947
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Pecica/Pec1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: podljubelj-1580
+    name: Podljubelj
+    location: Podljubelj, Karavanke
+    url: https://www.hribi.net/spletna_kamera/podljubelj/1580
+    mode: direct
+    image_url: https://www.hribi.net/kamere/podljubelj_1580.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: podplat-389
+    name: Podplat
+    location: Podplat, Karavanke
+    url: https://www.hribi.net/spletna_kamera/podplat/389
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Podplat/Pdp1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: poljana-2242
+    name: Poljana
+    location: Poljana, Karavanke
+    url: https://www.hribi.net/spletna_kamera/poljana/2242
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/drsi_vgrc/Poljana_Pol1_0001.jpg?dt=1775918940059
+    wait_seconds: 0
+    active: true
+
+  - id: presernova-koca-na-stolu-4270
+    name: Prešernova koča na Stolu
+    location: Prešernova koča na Stolu, Karavanke
+    url: https://www.hribi.net/spletna_kamera/presernova_koca_na_stolu/4270
+    mode: direct
+    image_url: https://kamere.s5net.si/stol.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: ratece-1678-1
+    name: Rateče (1)
+    location: Rateče, Karavanke
+    url: https://www.hribi.net/spletna_kamera/ratece/1678
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Ratece/Rat1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: slatina-363-1
+    name: Slatina (1)
+    location: Slatina, Karavanke
+    url: https://www.hribi.net/spletna_kamera/slatina/363
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Tepanje/Slatina_2.jpg?&dt=1584017810892
+    wait_seconds: 0
+    active: true
+
+  - id: slatina-363-2
+    name: Slatina (2)
+    location: Slatina, Karavanke
+    url: https://www.hribi.net/spletna_kamera/slatina/363
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Tepanje/Slatina_1.jpg?&dt=1584017810894
+    wait_seconds: 0
+    active: true
+
+  - id: spodnje-stranice-4444
+    name: Spodnje Stranice
+    location: Spodnje Stranice, Karavanke
+    url: https://www.hribi.net/spletna_kamera/spodnje_stranice/4444
+    mode: direct
+    image_url: https://www.drsc.si/kamere/SpodnjeStranice/Sst1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: skedenj-365-1
+    name: Škedenj (1)
+    location: Škedenj, Karavanke
+    url: https://www.hribi.net/spletna_kamera/skedenj/365
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Tepanje/%C5%A0kedenj_2.jpg?&dt=1584017684502
+    wait_seconds: 0
+    active: true
+
+  - id: skedenj-365-2
+    name: Škedenj (2)
+    location: Škedenj, Karavanke
+    url: https://www.hribi.net/spletna_kamera/skedenj/365
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Tepanje/%C5%A0kedenj_1.jpg?&dt=1584017684503
+    wait_seconds: 0
+    active: true
+
+  - id: smartno-pri-slovenj-gradcu-2963-1
+    name: Šmartno pri Slovenj Gradcu (1)
+    location: Šmartno pri Slovenj Gradcu, Karavanke
+    url: https://www.hribi.net/spletna_kamera/smartno_pri_slovenj_gradcu/2963
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/SLOVE-GRA_dir/siwc_SLOVE-GRA_n.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: smartno-pri-slovenj-gradcu-2963-2
+    name: Šmartno pri Slovenj Gradcu (2)
+    location: Šmartno pri Slovenj Gradcu, Karavanke
+    url: https://www.hribi.net/spletna_kamera/smartno_pri_slovenj_gradcu/2963
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/SLOVE-GRA_dir/siwc_SLOVE-GRA_ne.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: smartno-pri-slovenj-gradcu-2963-3
+    name: Šmartno pri Slovenj Gradcu (3)
+    location: Šmartno pri Slovenj Gradcu, Karavanke
+    url: https://www.hribi.net/spletna_kamera/smartno_pri_slovenj_gradcu/2963
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/SLOVE-GRA_dir/siwc_SLOVE-GRA_e.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: smartno-pri-slovenj-gradcu-2963-4
+    name: Šmartno pri Slovenj Gradcu (4)
+    location: Šmartno pri Slovenj Gradcu, Karavanke
+    url: https://www.hribi.net/spletna_kamera/smartno_pri_slovenj_gradcu/2963
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/SLOVE-GRA_dir/siwc_SLOVE-GRA_se.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: smartno-pri-slovenj-gradcu-2963-5
+    name: Šmartno pri Slovenj Gradcu (5)
+    location: Šmartno pri Slovenj Gradcu, Karavanke
+    url: https://www.hribi.net/spletna_kamera/smartno_pri_slovenj_gradcu/2963
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/SLOVE-GRA_dir/siwc_SLOVE-GRA_s.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: smartno-pri-slovenj-gradcu-2963-6
+    name: Šmartno pri Slovenj Gradcu (6)
+    location: Šmartno pri Slovenj Gradcu, Karavanke
+    url: https://www.hribi.net/spletna_kamera/smartno_pri_slovenj_gradcu/2963
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/SLOVE-GRA_dir/siwc_SLOVE-GRA_sw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: smartno-pri-slovenj-gradcu-2963-7
+    name: Šmartno pri Slovenj Gradcu (7)
+    location: Šmartno pri Slovenj Gradcu, Karavanke
+    url: https://www.hribi.net/spletna_kamera/smartno_pri_slovenj_gradcu/2963
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/SLOVE-GRA_dir/siwc_SLOVE-GRA_w.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: smartno-pri-slovenj-gradcu-2963-8
+    name: Šmartno pri Slovenj Gradcu (8)
+    location: Šmartno pri Slovenj Gradcu, Karavanke
+    url: https://www.hribi.net/spletna_kamera/smartno_pri_slovenj_gradcu/2963
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/SLOVE-GRA_dir/siwc_SLOVE-GRA_nw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: urslja-gora-1026-1
+    name: Uršlja gora (1)
+    location: Uršlja gora, Karavanke
+    url: https://www.hribi.net/spletna_kamera/urslja_gora/1026
+    mode: direct
+    image_url: https://www.s59ehi.net/webCam/zahod/slika1024.jpg?1765965508697
+    wait_seconds: 0
+    active: false
+
+  - id: urslja-gora-1026-2
+    name: Uršlja gora (2)
+    location: Uršlja gora, Karavanke
+    url: https://www.hribi.net/spletna_kamera/urslja_gora/1026
+    mode: direct
+    image_url: https://www.hribi.net/kamere/urslja_gora_1825.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: urslja-gora-1026-3
+    name: Uršlja gora (3)
+    location: Uršlja gora, Karavanke
+    url: https://www.hribi.net/spletna_kamera/urslja_gora/1026
+    mode: direct
+    image_url: https://www.hribi.net/kamere/urslja_gora_2313.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: urslja-gora-1026-4
+    name: Uršlja gora (4)
+    location: Uršlja gora, Karavanke
+    url: https://www.hribi.net/spletna_kamera/urslja_gora/1026
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/URSLJ-GOR_dir/siwc_URSLJ-GOR_se.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: urslja-gora-1026-5
+    name: Uršlja gora (5)
+    location: Uršlja gora, Karavanke
+    url: https://www.hribi.net/spletna_kamera/urslja_gora/1026
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/URSLJ-GOR_dir/siwc_URSLJ-GOR_sw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: urslja-gora-1026-6
+    name: Uršlja gora (6)
+    location: Uršlja gora, Karavanke
+    url: https://www.hribi.net/spletna_kamera/urslja_gora/1026
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/URSLJ-GOR_dir/siwc_URSLJ-GOR_nw.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: zakl-4822
+    name: Zakl
+    location: Zakl, Karavanke
+    url: https://www.hribi.net/spletna_kamera/zakl/4822
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Gruskovje/Zakl%20L04_32.jpg?dt=1675418857181
+    wait_seconds: 0
+    active: true
+
+  - id: zavodnje-5079
+    name: Zavodnje
+    location: Zavodnje, Karavanke
+    url: https://www.hribi.net/spletna_kamera/zavodnje/5079
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Zavodnje/Zav1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: zelenica-3382-1
+    name: Zelenica (1)
+    location: Zelenica, Karavanke
+    url: https://www.hribi.net/spletna_kamera/zelenica/3382
+    mode: direct
+    image_url: http://www.meteo.si//uploads/probase/www/observ/webcam/ZELENICA_dir/siwc_ZELENICA_w.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: zelenica-3382-2
+    name: Zelenica (2)
+    location: Zelenica, Karavanke
+    url: https://www.hribi.net/spletna_kamera/zelenica/3382
+    mode: direct
+    image_url: http://www.meteo.si//uploads/probase/www/observ/webcam/ZELENICA_dir/siwc_ZELENICA_se.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: zima-362-1
+    name: Zima (1)
+    location: Zima, Karavanke
+    url: https://www.hribi.net/spletna_kamera/zima/362
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Baza_Konjice/Zima_smer_CE.jpg?&dt=1584019629875
+    wait_seconds: 0
+    active: true
+
+  - id: zima-362-2
+    name: Zima (2)
+    location: Zima, Karavanke
+    url: https://www.hribi.net/spletna_kamera/zima/362
+    mode: direct
+    image_url: https://kamere.dars.si/kamere/Baza_Konjice/Zima_smer_MB.jpg?&dt=1584019629876
+    wait_seconds: 0
+    active: true
+
