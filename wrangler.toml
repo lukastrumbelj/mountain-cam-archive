@@ -1,8 +1,12 @@
 name = "mountain-cam-archive"
-pages_build_output_dir = "./frontend"
+main = "src/worker.js"
 compatibility_date = "2026-11-01"
 
-# R2 bucket je dostopen samo funkcijam na strežniku (functions/), nikoli brskalniku.
+# Statična stran (frontend/). Datoteke, ki obstajajo, postreže Cloudflare brez Workerja.
+[assets]
+directory = "./frontend"
+
+# R2 bucket je dostopen samo Workerju, nikoli brskalniku.
 [[r2_buckets]]
 binding = "BUCKET"
 bucket_name = "mountain-cams"
