@@ -15,7 +15,7 @@ def fetch(cam: Camera, settings: dict) -> bytes:
     headers = {"User-Agent": settings["user_agent"], "Accept": "image/*,*/*;q=0.5"}
     headers.update(cam.extra.get("headers") or {})
     last = "neznana napaka"
-    for attempt in range(3):
+    for attempt in range(2):
         try:
             r = httpx.get(
                 cam.image_url,
@@ -34,5 +34,5 @@ def fetch(cam: Camera, settings: dict) -> bytes:
             last = f"HTTP {r.status_code}"
             if r.status_code not in _RETRY_STATUS:
                 raise CaptureError(last, "reachable")
-        time.sleep(2 * (attempt + 1))
+        time.sleep(1.5)
     raise CaptureError(f"vir ni dosegljiv: {last}", "reachable")

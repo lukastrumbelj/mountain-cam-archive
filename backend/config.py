@@ -16,6 +16,9 @@ DEFAULTS = {
     "min_width": 200,
     "min_height": 120,
     "timezone": "Europe/Ljubljana",
+    "workers": 12,
+    "per_host": 2,
+    "max_runtime_minutes": 12,
     "slots": ["07:00", "10:00", "13:00", "16:00", "19:00"],
 }
 
