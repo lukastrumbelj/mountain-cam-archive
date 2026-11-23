@@ -2,11 +2,11 @@ name: capture
 
 on:
   schedule:
-    # Termini 07, 10, 13, 16, 19 (Europe/Ljubljana). GitHub cron je samo v UTC, zato sta tu
-    # zimski (UTC+1) in poletni (UTC+2) niz; --require-slot preskoči tistega, ki ne ustreza.
+    # Termini (Europe/Ljubljana) so v config/cameras.yaml -> settings.slots.
+    # GitHub cron je samo v UTC: vsako uro ob :07; --require-slot preskoči zagone brez termina
+    # (npr. sode ure ponoči), zato zimski/poletni čas ne zahteva ročnih sprememb.
     # Minuta 7 namesto 0: GitHub ob polnih urah pogosto zamuja.
-    - cron: "7 6,9,12,15,18 * * *"   # zima
-    - cron: "7 5,8,11,14,17 * * *"   # poletje
+    - cron: "7 * * * *"
   workflow_dispatch:
     inputs:
       only:
@@ -25,7 +25,7 @@ permissions:
 jobs:
   capture:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -36,9 +36,9 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Playwright (samo če kamera uporablja selector/screenshot/custom)
+      - name: Playwright (samo če kamera uporablja brskalnik)
         run: |
-          if grep -Eq "^\s*mode:\s*(selector|screenshot|custom)" config/cameras.yaml; then
+          if grep -Eq "^\s*mode:\s*(selector|screenshot|custom|video)" config/cameras.yaml; then
             playwright install --with-deps chromium
           fi
 
@@ -51,7 +51,7 @@ jobs:
           ONLY: ${{ github.event.inputs.only }}
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            python -m backend.main --require-slot --tolerance 45
+            python -m backend.main --require-slot --tolerance 30
           elif [ -n "$ONLY" ]; then
             python -m backend.main --manual --only $ONLY
           else
