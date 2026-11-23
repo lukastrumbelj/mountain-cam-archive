@@ -24,16 +24,28 @@ from .storage.r2_storage import LocalStorage, R2Storage
 from .timeutil import local_parts, nearest_slot
 
 
-def _host_limited(fn, per_host: int):
-    """Največ `per_host` hkratnih zahtev na isti strežnik (vljudnost do virov)."""
+def _host_limited(fn, per_host: int, max_timeouts: int = 2):
+    """Največ `per_host` hkratnih zahtev na strežnik. Če strežnik ob zagonu ni dosegljiv
+    (>= max_timeouts timeoutov in nobenega uspeha), preostale kamere tega strežnika preskoči."""
     locks, guard = defaultdict(lambda: threading.BoundedSemaphore(per_host)), threading.Lock()
+    timeouts, successes = defaultdict(int), defaultdict(int)
 
     def wrapped(cam, settings):
         host = urlparse(cam.image_url or cam.url).netloc
         with guard:
             sem = locks[host]
         with sem:
-            return fn(cam, settings)
+            with guard:
+                if timeouts[host] >= max_timeouts and not successes[host]:
+                    return CaptureResult(cam.id, False, stage="reachable",
+                                         error=f"strežnik {host} ni dosegljiv iz zagona (preskočeno)")
+            res = fn(cam, settings)
+            with guard:
+                if res.ok:
+                    successes[host] += 1
+                elif res.error and "Timeout" in res.error:
+                    timeouts[host] += 1
+            return res
     return wrapped
 
 
@@ -100,6 +112,7 @@ def run_capture(cams, settings, storage, capture_fn=capture_camera, manual=False
         while pending:
             left = deadline - time.monotonic()
             if left <= 0:
+                print(f"Časovna omejitev: nedokončanih {len(pending)} kamer", flush=True)
                 break
             done, _ = wait(pending, timeout=left, return_when=FIRST_COMPLETED)
             for f in done:

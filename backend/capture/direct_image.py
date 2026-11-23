@@ -20,9 +20,11 @@ def fetch(cam: Camera, settings: dict) -> bytes:
             r = httpx.get(
                 cam.image_url,
                 headers=headers,
-                timeout=settings["timeout_seconds"],
+                timeout=httpx.Timeout(settings["timeout_seconds"], connect=8.0),
                 follow_redirects=True,
             )
+        except httpx.ConnectTimeout as e:  # strežnik se ne odziva: ponavljanje ne pomaga
+            raise CaptureError(f"vir ni dosegljiv: ConnectTimeout: {e}", "reachable")
         except httpx.HTTPError as e:
             last = f"{type(e).__name__}: {e}"
         else:
