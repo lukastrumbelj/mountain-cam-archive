@@ -1,16 +1,16 @@
 name: capture
 
 on:
-  schedule:
-    # Termini (Europe/Ljubljana) so v config/cameras.yaml -> settings.slots.
-    # GitHub cron je samo v UTC: vsako uro ob :07; --require-slot preskoči zagone brez termina
-    # (npr. sode ure ponoči), zato zimski/poletni čas ne zahteva ročnih sprememb.
-    # Minuta 7 namesto 0: GitHub ob polnih urah pogosto zamuja.
-    - cron: "7 * * * *"
+  # Redni zagon sproži Cloudflare Worker (cron + workflow_dispatch z mode=slot), ker je GitHubov
+  # "schedule" neustrezno zanesljiv. Termini (Europe/Ljubljana) so v config/cameras.yaml -> settings.slots.
   workflow_dispatch:
     inputs:
       only:
         description: "ID kamer (ločeni s presledkom), prazno = vse"
+        required: false
+        default: ""
+      mode:
+        description: "slot = samo če je ura termin (uporablja sprožilec); prazno = ročni zajem takoj"
         required: false
         default: ""
 
@@ -49,8 +49,9 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           ONLY: ${{ github.event.inputs.only }}
+          MODE: ${{ github.event.inputs.mode }}
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "$MODE" = "slot" ]; then
             python -m backend.main --require-slot --tolerance 30
           elif [ -n "$ONLY" ]; then
             python -m backend.main --manual --only $ONLY
