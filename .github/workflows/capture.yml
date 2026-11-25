@@ -16,7 +16,8 @@ on:
 
 # En zajem naenkrat: preprečuje hkratno pisanje v index.json.
 concurrency:
-  group:  cancel-in-progress: false
+  group: capture
+  cancel-in-progress: false
 
 permissions:
   contents: read
