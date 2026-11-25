@@ -10,3 +10,16 @@ directory = "./frontend"
 [[r2_buckets]]
 binding = "BUCKET"
 bucket_name = "mountain-cams"
+
+# Sprožilec zajema (cron v UTC): vsako polno uro. Worker zažene zajem samo ob terminih (SLOTS).
+[triggers]
+crons = ["0 * * * *"]
+
+[vars]
+GH_REPO = "lukastrumbelj/mountain-cam-archive"
+GH_WORKFLOW = "capture.yml"
+GH_REF = "main"
+TIMEZONE = "Europe/Ljubljana"
+# Termini zajema (lokalni čas). Uskladi s config/cameras.yaml -> settings.slots.
+SLOTS = "07:00,08:00,09:00,10:00,11:00,12:00,13:00,14:00,15:00,16:00,17:00,18:00,19:00,21:00,23:00,01:00,03:00,05:00"
+# GH_TOKEN je skrivnost: Cloudflare -> Worker -> Settings -> Variables and Secrets (ne v to datoteko!)

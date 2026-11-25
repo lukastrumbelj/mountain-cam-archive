@@ -33,7 +33,43 @@ async function image(env, key) {
   });
 }
 
+// Sprožilec zajema: Cloudflare cron ob vsaki polni uri (UTC); če je lokalna ura (Europe/Ljubljana)
+// med termini SLOTS, pokliče GitHub API (workflow_dispatch). GitHubov "schedule" je nezanesljiv.
+// SLOTS v wrangler.toml mora ustrezati config/cameras.yaml -> settings.slots (Python ima še svojo
+// zaščito --require-slot, zato napaka v SLOTS ne povzroči napačnih imen slik).
+function isSlotHour(env, when) {
+  const slots = String(env.SLOTS || "").split(",").map((x) => x.trim()).filter(Boolean);
+  if (!slots.length) return true;
+  const hhmm = new Intl.DateTimeFormat("en-GB", {
+    timeZone: env.TIMEZONE || "Europe/Ljubljana", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+  }).format(when);
+  return slots.includes(hhmm);
+}
+
+// Potrebno: skrivnost GH_TOKEN (fine-grained PAT, samo ta repozitorij, Actions: Read and write).
+async function triggerCapture(env) {
+  if (!env.GH_TOKEN) throw new Error("manjka skrivnost GH_TOKEN");
+  const url = `https://api.github.com/repos/${env.GH_REPO}/actions/workflows/${env.GH_WORKFLOW || "capture.yml"}/dispatches`;
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${env.GH_TOKEN}`,
+      accept: "application/vnd.github+json",
+      "x-github-api-version": "2022-11-28",
+      "user-agent": "mountain-cam-archive-trigger",
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({ ref: env.GH_REF || "main", inputs: { mode: "slot" } }),
+  });
+  if (!res.ok) throw new Error(`GitHub dispatch ${res.status}: ${(await res.text()).slice(0, 200)}`);
+}
+
 export default {
+  async scheduled(event, env, ctx) {
+    if (!isSlotHour(env, new Date(event.scheduledTime ?? Date.now()))) return;
+    ctx.waitUntil(triggerCapture(env));
+  },
+
   async fetch(request, env) {
     if (request.method !== "GET" && request.method !== "HEAD") {
       return new Response("Method not allowed", { status: 405 });

@@ -39,3 +39,38 @@ test("druge poti in metode", async () => {
   assert.equal((await call("/nekaj")).status, 404);
   assert.equal((await call("/api/status", {}, "POST")).status, 405);
 });
+
+test("scheduled: pokliče GitHub dispatch z mode=slot", async () => {
+  const calls = [];
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (url, init) => { calls.push([url, init]); return new Response(null, { status: 204 }); };
+  try {
+    let p;
+    await worker.scheduled({}, { GH_TOKEN: "t", GH_REPO: "o/r" }, { waitUntil: (x) => (p = x) });
+    await p;
+    assert.equal(calls[0][0], "https://api.github.com/repos/o/r/actions/workflows/capture.yml/dispatches");
+    assert.equal(calls[0][1].headers.authorization, "Bearer t");
+    assert.deepEqual(JSON.parse(calls[0][1].body), { ref: "main", inputs: { mode: "slot" } });
+    globalThis.fetch = async () => new Response("bad", { status: 401 });
+    await worker.scheduled({}, { GH_TOKEN: "t", GH_REPO: "o/r" }, { waitUntil: (x) => (p = x) });
+    await assert.rejects(p, /401/);
+    await worker.scheduled({}, { GH_REPO: "o/r" }, { waitUntil: (x) => (p = x) });
+    await assert.rejects(p, /GH_TOKEN/);
+  } finally { globalThis.fetch = realFetch; }
+});
+
+test("scheduled: zunaj terminov ne kliče GitHuba, ob terminu (poletni/zimski čas) kliče", async () => {
+  const calls = [];
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (u, i) => { calls.push(u); return new Response(null, { status: 204 }); };
+  const env = { GH_TOKEN: "t", GH_REPO: "o/r", SLOTS: "07:00,19:00,23:00" };
+  const run = async (iso) => { let p; await worker.scheduled({ scheduledTime: Date.parse(iso) }, env, { waitUntil: (x) => (p = x) }); await p; };
+  try {
+    await run("2026-11-25T20:00:00Z");  // 21:00 CET: ni v SLOTS
+    await run("2026-11-25T06:00:00Z");  // 07:00 CET: termin
+    await run("2026-07-25T05:00:00Z");  // 07:00 CEST: termin
+    await run("2026-07-25T06:00:00Z");  // 08:00 CEST: ni termin
+    await run("2026-11-25T22:00:00Z");  // 23:00 CET: termin
+    assert.equal(calls.length, 3);
+  } finally { globalThis.fetch = realFetch; }
+});
