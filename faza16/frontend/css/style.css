@@ -1,0 +1,65 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4f6f8; --card: #fff; --text: #14202b; --muted: #5d6b78; --line: #dde3e9;
+  --accent: #1f6feb; --ok: #1a7f37; --warn: #b36b00; --err: #cf222e; --gray: #6e7781;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0e141a; --card: #17202a; --text: #e6edf3; --muted: #9aa7b4; --line: #2a3541;
+          --accent: #58a6ff; --ok: #3fb950; --warn: #d29922; --err: #f85149; --gray: #8b949e; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: inherit; text-decoration: none; }
+header.top { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+  padding: 16px max(16px, 4vw); }
+header.top h1 { margin: 0; font-size: 1.3rem; }
+main { padding: 0 max(16px, 4vw) 40px; max-width: 1400px; margin: 0 auto; }
+input, select, button { font: inherit; color: var(--text); background: var(--card);
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; }
+button { cursor: pointer; }
+button:hover:not(:disabled) { border-color: var(--accent); }
+button:disabled { opacity: .45; cursor: default; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.summary { color: var(--muted); margin: 0 0 16px; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.range { margin: 28px 0 12px; font-size: 1.25rem; }
+.range:first-child { margin-top: 8px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  display: flex; flex-direction: column; transition: transform .15s, border-color .15s; }
+.card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.card .thumb { aspect-ratio: 16 / 10; background: #0003; object-fit: cover; width: 100%; display: block; }
+.card .body { padding: 12px 14px; }
+.card h2 { margin: 0 0 2px; font-size: 1.05rem; }
+.muted { color: var(--muted); font-size: .9rem; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 99px; font-size: .8rem; font-weight: 600;
+  border: 1px solid currentColor; }
+.badge.ok { color: var(--ok); } .badge.stale { color: var(--warn); }
+.badge.error { color: var(--err); } .badge.none { color: var(--gray); }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 8px; }
+.tabs { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+.tabs button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.viewer { background: #000; border-radius: 12px; overflow: hidden; }
+.viewer img { width: 100%; display: block; max-height: 78vh; object-fit: contain; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.compare img { width: 100%; border-radius: 10px; background: #000; display: block; }
+.error-box { background: var(--card); border: 1px solid var(--err); color: var(--err);
+  padding: 12px 16px; border-radius: 10px; }
+input[type=range] { flex: 1; min-width: 160px; padding: 0; }
+@media (max-width: 640px) { .compare { grid-template-columns: 1fr; } }
+
+.sitenav { display: flex; gap: 8px; padding: 0 max(16px, 4vw) 12px; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; }
+.sitenav a { padding: 8px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); font-weight: 600; }
+.sitenav a:hover { border-color: var(--accent); }
+.sitenav a[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.wx-days { margin-top: 10px; }
+.chips button.missing { opacity: .5; border-style: dashed; }
+.wx-scroll { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: auto; max-height: 82vh; }
+.wx-img { display: block; width: 100%; height: auto; }
+.wx-scroll.zoomed .wx-img { width: auto; max-width: none; }
+.wx-empty { padding: 40px 16px; text-align: center; }
+.wx-source { margin-top: 20px; }
+.wx-source a { text-decoration: underline; }

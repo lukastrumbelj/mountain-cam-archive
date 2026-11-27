@@ -6,7 +6,7 @@
 Pravila (da se nič ne izbriše prezgodaj):
   - starost se računa po DATUMU v poti (lokalni čas Europe/Ljubljana), ne po času datoteke;
   - ohranijo se dnevi >= danes - retention_days (torej dodatni delni dan);
-  - briše samo ključe oblike archive/{id}/YYYY/MM/DD/...; meta/ in ostalo se ne dotakne.
+  - briše samo ključe oblike archive/{id}/YYYY/MM/DD/... in weather/YYYY/MM/DD/...; meta/ in ostalo se ne dotakne.
 """
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ from .config import load_config
 from .metadata import metadata_manager as mm
 from .storage.r2_storage import LocalStorage, R2Storage
 
-KEY_RE = re.compile(r"^archive/[a-z0-9-]+/(\d{4})/(\d{2})/(\d{2})/[^/]+$")
+KEY_RE = re.compile(r"^(?:archive/[a-z0-9-]+|weather)/(\d{4})/(\d{2})/(\d{2})/[^/]+$")
 
 
 def run_cleanup(storage, settings, today: date | None = None, dry_run: bool = False) -> dict:
@@ -32,7 +32,7 @@ def run_cleanup(storage, settings, today: date | None = None, dry_run: bool = Fa
     cutoff = today - timedelta(days=days)  # dnevi pred tem datumom se izbrišejo
 
     old = []
-    for key in storage.list("archive/"):
+    for key in [*storage.list("archive/"), *storage.list("weather/")]:
         m = KEY_RE.match(key)
         if not m:
             continue

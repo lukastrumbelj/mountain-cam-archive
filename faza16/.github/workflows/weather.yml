@@ -1,0 +1,52 @@
+name: weather
+
+on:
+  # Dnevni posnetek ARSO napovedi: sproži ga Cloudflare Worker ob settings.time (config/weather.yaml).
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "ID regij (ločeni s presledkom), prazno = vse"
+        required: false
+        default: ""
+      mode:
+        description: "slot = samo če je ura blizu settings.time (sprožilec); prazno = takoj"
+        required: false
+        default: ""
+
+# Ločeno od zajema kamer: piše samo weather/ in meta/weather.json.
+concurrency:
+  group: weather
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  weather:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - run: playwright install --with-deps chromium
+
+      - name: Posnetek vremena
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          ONLY: ${{ github.event.inputs.only }}
+          MODE: ${{ github.event.inputs.mode }}
+        run: |
+          ARGS=""
+          if [ "$MODE" = "slot" ]; then ARGS="--require-slot --tolerance 30"; fi
+          if [ -n "$ONLY" ]; then ARGS="$ARGS --only $ONLY"; fi
+          python -m backend.weather $ARGS

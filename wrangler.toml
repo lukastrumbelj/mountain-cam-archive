@@ -19,7 +19,10 @@ crons = ["0 * * * *"]
 GH_REPO = "lukastrumbelj/mountain-cam-archive"
 GH_WORKFLOW = "capture.yml"
 GH_REF = "main"
+GH_WEATHER_WORKFLOW = "weather.yml"
 TIMEZONE = "Europe/Ljubljana"
+# Dnevni posnetek ARSO napovedi (lokalni čas). Uskladi s config/weather.yaml -> settings.time.
+WEATHER_AT = "12:00"
 # Termini zajema (lokalni čas). Uskladi s config/cameras.yaml -> settings.slots.
 SLOTS = "00:00,01:00,02:00,03:00,04:00,05:00,06:00,07:00,08:00,09:00,10:00,11:00,12:00,13:00,14:00,15:00,16:00,17:00,18:00,19:00,20:00,21:00,22:00,23:00"
 # GH_TOKEN je skrivnost: Cloudflare -> Worker -> Settings -> Variables and Secrets (ne v to datoteko!)

@@ -46,15 +46,16 @@ test("scheduled: pokliče GitHub dispatch z mode=slot", async () => {
   globalThis.fetch = async (url, init) => { calls.push([url, init]); return new Response(null, { status: 204 }); };
   try {
     let p;
-    await worker.scheduled({}, { GH_TOKEN: "t", GH_REPO: "o/r" }, { waitUntil: (x) => (p = x) });
+    const ALL = Array.from({ length: 24 }, (_, h) => String(h).padStart(2, "0") + ":00").join(",");
+    await worker.scheduled({ scheduledTime: Date.parse("2026-11-27T11:00:00Z") }, { GH_TOKEN: "t", GH_REPO: "o/r", SLOTS: ALL }, { waitUntil: (x) => (p = x) });
     await p;
     assert.equal(calls[0][0], "https://api.github.com/repos/o/r/actions/workflows/capture.yml/dispatches");
     assert.equal(calls[0][1].headers.authorization, "Bearer t");
     assert.deepEqual(JSON.parse(calls[0][1].body), { ref: "main", inputs: { mode: "slot" } });
     globalThis.fetch = async () => new Response("bad", { status: 401 });
-    await worker.scheduled({}, { GH_TOKEN: "t", GH_REPO: "o/r" }, { waitUntil: (x) => (p = x) });
+    await worker.scheduled({ scheduledTime: Date.parse("2026-11-27T11:00:00Z") }, { GH_TOKEN: "t", GH_REPO: "o/r", SLOTS: ALL }, { waitUntil: (x) => (p = x) });
     await assert.rejects(p, /401/);
-    await worker.scheduled({}, { GH_REPO: "o/r" }, { waitUntil: (x) => (p = x) });
+    await worker.scheduled({ scheduledTime: Date.parse("2026-11-27T11:00:00Z") }, { GH_REPO: "o/r", SLOTS: ALL }, { waitUntil: (x) => (p = x) });
     await assert.rejects(p, /GH_TOKEN/);
   } finally { globalThis.fetch = realFetch; }
 });
@@ -72,5 +73,37 @@ test("scheduled: zunaj terminov ne kliče GitHuba, ob terminu (poletni/zimski č
     await run("2026-07-25T06:00:00Z");  // 08:00 CEST: ni termin
     await run("2026-11-25T22:00:00Z");  // 23:00 CET: termin
     assert.equal(calls.length, 3);
+  } finally { globalThis.fetch = realFetch; }
+});
+
+test("weather: API in slike (samo veljavne poti)", async () => {
+  const files = {
+    "meta/weather.json": '{"days":{"2026-11-27":{}}}',
+    "weather/2026/11/27/karavanke.jpg": "JPEG",
+    "weather/2026/11/27/index.json": "{}",
+  };
+  assert.deepEqual(await (await call("/api/weather", files)).json(), { days: { "2026-11-27": {} } });
+  assert.deepEqual(await (await call("/api/weather")).json(), { version: 1, regions: {}, days: {} });
+  assert.equal((await call("/img/weather/2026/11/27/karavanke.jpg", files)).status, 200);
+  assert.equal((await call("/img/weather/2026/11/27/index.json", files)).status, 404);
+  assert.equal((await call("/img/weather/2026/11/27/..%2F..%2Fmeta%2Fstatus.jpg", files)).status, 404);
+  assert.equal((await call("/img/meta/weather.json", files)).status, 404);
+});
+
+test("scheduled: ob 12:00 sproži kamere in vreme; napaka enega ne ustavi drugega", async () => {
+  const urls = [];
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (u) => { urls.push(u); return new Response(u.includes("weather") ? "err" : null, { status: u.includes("weather") ? 500 : 204 }); };
+  const env = { GH_TOKEN: "t", GH_REPO: "o/r", SLOTS: "11:00,12:00", WEATHER_AT: "12:00" };
+  const run = async (iso) => { let p; await worker.scheduled({ scheduledTime: Date.parse(iso) }, env, { waitUntil: (x) => (p = x) }); return p; };
+  try {
+    await run("2026-11-27T10:00:00Z");                      // 11:00 CET: samo kamere
+    assert.deepEqual(urls.map((u) => u.split("/workflows/")[1]), ["capture.yml/dispatches"]);
+    urls.length = 0;
+    await assert.rejects(run("2026-11-27T11:00:00Z"), /weather\.yml 500/);   // 12:00 CET: oba; vreme vrne napako
+    assert.deepEqual(urls.map((u) => u.split("/workflows/")[1]).sort(), ["capture.yml/dispatches", "weather.yml/dispatches"]);
+    urls.length = 0;
+    await run("2026-07-27T10:00:00Z").catch(() => {});      // 12:00 CEST: poletni čas
+    assert.equal(urls.length, 2);
   } finally { globalThis.fetch = realFetch; }
 });

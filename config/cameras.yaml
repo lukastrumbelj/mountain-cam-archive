@@ -22,7 +22,7 @@ settings:
 cameras:
   - id: kamnisko-sedlo
     name: Kamniško sedlo
-    location: Kamniška koča na Kamniškem sedlu, Kamniško-Savinjske Alpe
+    location: Kamniška koča na Kamniškem sedlu, Kamniško Savinjske Alpe
     url: https://kamniska-koca.si/
     mode: direct
     image_url: https://pdkamnik.si/webcam/sedlo.jpg
@@ -31,7 +31,7 @@ cameras:
 
   - id: zgornje-jezersko
     name: Zgornje Jezersko
-    location: Zgornje Jezersko (880 m), Kamniško-Savinjske Alpe
+    location: Zgornje Jezersko (880 m), Kamniško Savinjske Alpe
     url: https://www.hribi.net/spletna_kamera/zgornje_jezersko/1071
     mode: direct
     image_url: https://www.drsc.si/kamere/Jezersko/Jez1_0001.jpg

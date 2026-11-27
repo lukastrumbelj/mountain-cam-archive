@@ -1,0 +1,34 @@
+# Dnevni posnetek ARSO napovedi za hribe (workflow weather.yml; sproži ga Cloudflare Worker ob "time").
+# Vir: ARSO (meteo.si), podatki so javni in se smejo ponovno uporabljati z navedbo vira.
+settings:
+  time: "12:00"            # lokalni čas dnevnega zajema (uskladi s WEATHER_AT v wrangler.toml)
+  # hramba: config/cameras.yaml -> settings.retention_days (isto kot pri kamerah)
+  viewport_width: 1900     # tabela ima ~33 stolpcev: široko okno, da je vse na eni sliki
+  jpeg_quality: 85
+  timeout_seconds: 40
+
+pages:
+  - id: julijske-alpe
+    name: Julijske Alpe
+    url: https://meteo.arso.gov.si/uploads/probase/www/fproduct/text/sl/forecast_SI_JULIAN-ALPS_long.html
+  - id: julijske-alpe-jz
+    name: Julijske Alpe (jugozahod)
+    url: https://meteo.arso.gov.si/uploads/probase/www/fproduct/text/sl/forecast_SI_JULIAN-ALPS_SOUTH-WEST_long.html
+  - id: kamnisko-savinjske-alpe
+    name: Kamniško-Savinjske Alpe
+    url: https://meteo.arso.gov.si/uploads/probase/www/fproduct/text/sl/forecast_SI_KAMNIK-SAVINJA-ALPS_long.html
+  - id: karavanke
+    name: Karavanke
+    url: https://meteo.arso.gov.si/uploads/probase/www/fproduct/text/sl/forecast_SI_KARAVANKE-ALPS_long.html
+  - id: pohorje
+    name: Pohorje
+    url: https://meteo.arso.gov.si/uploads/probase/www/fproduct/text/sl/forecast_SI_POHORJE_long.html
+  - id: snezznik
+    name: Snežnik
+    url: https://meteo.arso.gov.si/uploads/probase/www/fproduct/text/sl/forecast_SI_SNEZNIK_long.html
+  - id: skofjelosko-hribovje
+    name: Škofjeloško hribovje
+    url: https://meteo.arso.gov.si/uploads/probase/www/fproduct/text/sl/forecast_SI_SKOFJELOSKO-HRIBOVJE_long.html
+  - id: vzhodna-gorovja
+    name: Vzhodna gorovja
+    url: https://meteo.arso.gov.si/uploads/probase/www/fproduct/text/sl/forecast_SI_EAST-MOUNTAINS_long.html

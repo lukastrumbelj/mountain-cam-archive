@@ -50,3 +50,16 @@ button.primary { background: var(--accent); border-color: var(--accent); color: 
   padding: 12px 16px; border-radius: 10px; }
 input[type=range] { flex: 1; min-width: 160px; padding: 0; }
 @media (max-width: 640px) { .compare { grid-template-columns: 1fr; } }
+
+.sitenav { display: flex; gap: 8px; padding: 0 max(16px, 4vw) 12px; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; }
+.sitenav a { padding: 8px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); font-weight: 600; }
+.sitenav a:hover { border-color: var(--accent); }
+.sitenav a[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.wx-days { margin-top: 10px; }
+.chips button.missing { opacity: .5; border-style: dashed; }
+.wx-scroll { background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: auto; max-height: 82vh; }
+.wx-img { display: block; width: 100%; height: auto; }
+.wx-scroll.zoomed .wx-img { width: auto; max-width: none; }
+.wx-empty { padding: 40px 16px; text-align: center; }
+.wx-source { margin-top: 20px; }
+.wx-source a { text-decoration: underline; }

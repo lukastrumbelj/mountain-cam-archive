@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="sl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arhiv vreme – gorske kamere</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>🏔️ Gorske kamere – arhiv</h1>
+  </header>
+  <nav class="sitenav" aria-label="Razdelki">
+    <a href="index.html">Arhiv kamere</a>
+    <a href="weather.html" aria-current="page">Arhiv vreme</a>
+  </nav>
+  <main>
+    <p id="summary" class="summary">Nalagam …</p>
+    <div id="app" hidden>
+      <div class="chips" id="regions" role="group" aria-label="Gorovje"></div>
+      <div class="chips wx-days" id="days" role="group" aria-label="Dan"></div>
+      <div class="controls">
+        <button id="newer" type="button">← Novejši dan</button>
+        <button id="older" type="button">Starejši dan →</button>
+        <button id="zoom" type="button" aria-pressed="false">Prava velikost</button>
+        <span id="info" class="muted"></span>
+      </div>
+      <div id="viewer" class="wx-scroll"></div>
+    </div>
+    <p class="muted wx-source">Vir: Agencija RS za okolje (ARSO), meteo.si – »Slovenski javni podatki«.
+      Posnetek tabele napovedi, shranjen enkrat na dan; <a id="orig" href="https://meteo.arso.gov.si/" rel="noopener">izvirna stran ARSO</a>.</p>
+  </main>
+  <script type="module" src="js/weather.js"></script>
+</body>
+</html>
