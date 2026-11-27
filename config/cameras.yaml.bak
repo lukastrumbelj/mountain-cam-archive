@@ -1,0 +1,98 @@
+# Konfiguracija kamer. Nova kamera = nov blok v "cameras". Nič drugega ni treba spreminjati.
+#
+# mode:
+#   direct     - neposreden URL slike (image_url)          -> brez brskalnika, najcenejše
+#   selector   - Playwright zajame element (selector)      -> potrebuje selector
+#   screenshot - Playwright zajame prikaz strani           -> extra: clip, full_page
+#   custom     - Playwright + extra.steps (click/wait/hide) -> selector neobvezen
+#
+# extra (neobvezno): headers, steps, clip {x,y,width,height}, full_page, viewport {width,height}
+
+settings:
+  # Pred uporabo zamenjaj z lastnim repozitorijem, da je vir zahtevkov prepoznaven.
+  user_agent: "MountainCamArchive/0.1 (osebni neprofitni arhiv; +https://github.com/lukastrumbelj/mountain-cam-archive)"
+  timeout_seconds: 20
+  retention_days: 7
+  jpeg_quality: 88
+  min_width: 200
+  min_height: 120
+  timezone: Europe/Ljubljana
+  slots: ["07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","21:00","23:00","01:00","03:00","05:00"]
+
+cameras:
+  - id: kamnisko-sedlo
+    name: Kamniško sedlo
+    location: Kamniška koča na Kamniškem sedlu, Kamniško-Savinjske Alpe
+    url: https://kamniska-koca.si/
+    mode: direct
+    image_url: https://pdkamnik.si/webcam/sedlo.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: zgornje-jezersko
+    name: Zgornje Jezersko
+    location: Zgornje Jezersko (880 m), Kamniško-Savinjske Alpe
+    url: https://www.hribi.net/spletna_kamera/zgornje_jezersko/1071
+    mode: direct
+    image_url: https://www.drsc.si/kamere/Jezersko/Jez1_0001.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: rudno-polje-ne
+    name: Rudno polje (SV)
+    location: Rudno polje, Pokljuka (1344 m), Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/pokljuka/1700
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/RUDNO-POL_dir/siwc_RUDNO-POL_ne.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: rudno-polje-j
+    name: Rudno polje (J)
+    location: Rudno polje, Pokljuka (1344 m), Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/pokljuka/1700
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/RUDNO-POL_dir/siwc_RUDNO-POL_s.jpg
+    wait_seconds: 0
+    active: true
+
+  - id: vogel-arso
+    name: Vogel (ARSO)
+    location: Smučišče Vogel (1535 m), Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/vogel/16
+    mode: direct
+    image_url: http://meteo.arso.gov.si/uploads/probase/www/observ/webcam/VOGEL_dir/siwc_VOGEL_e.jpg
+    wait_seconds: 0
+    active: true
+
+  # --- Neaktivne, dokler ne preveriš pogojev uporabe ---
+  # Spodnje slike gostuje hribi.net (kopije tujih kamer). Pogojev nisem mogel prebrati.
+  # Izvirni viri (zelenica.info, pd-krize.si, radiopuntozero.com) nimajo znanega direktnega URL-ja.
+  - id: dom-na-zelenici
+    name: Dom na Zelenici
+    location: Dom na Zelenici (1536 m), Karavanke
+    url: https://www.hribi.net/spletna_kamera/dom_na_zelenici/1762
+    mode: direct
+    image_url: https://www.hribi.net/kamere/dom_na_zelenici_1762.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: kriska-gora
+    name: Kriška gora
+    location: Koča na Kriški gori (1471 m), Karavanke
+    url: https://www.hribi.net/spletna_kamera/kriska_gora/2115
+    mode: direct
+    image_url: https://www.hribi.net/kamere/kriska_gora_2115.jpg
+    wait_seconds: 0
+    active: false
+
+  - id: svete-visarje
+    name: Svete Višarje
+    location: Svete Višarje (1766 m), Julijske Alpe
+    url: https://www.hribi.net/spletna_kamera/svete_visarje/781
+    mode: direct
+    image_url: https://www.hribi.net/kamere/svete_visarje_3058.jpg
+    wait_seconds: 0
+    active: false
+
+  # Vogel (WhatsUpCams): IZKLJUČENO. Pogoji uporabe prepovedujejo samodejni dostop/scraping.
